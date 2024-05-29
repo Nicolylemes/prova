@@ -1,0 +1,298 @@
+1-
+public class Exer_1 {
+
+    public static void main(String[] args) {
+      somaVetores();
+    }
+    public static void somaVetores(){
+        Scanner scanner = new Scanner(System.in);
+                System.out.println("insira os elementos do primeiro vetor: ");
+
+        int t = 5;
+        int[] vetor1 = new int[t];
+        for (int i = 0; i < t; i++){
+            vetor1[i] = scanner.nextInt();
+     
+        }
+        System.out.println("insira os elementos do segundo vetor: ");
+         int[] vetor2 = new int[t];
+        for (int i = 0; i < t; i++){
+            vetor2[i] = scanner.nextInt();
+        }
+        
+        int[] vetorSoma = new int[t];
+        for (int i = 0; i < t; i++){
+            vetorSoma[i] = vetor1[i] + vetor2[i];
+        }
+        String vetorString = Arrays.toString(vetorSoma);
+        System.out.println("soma dos vetores: " + vetorString);
+    }
+}
+
+2-
+public class Exer_2 {
+
+    public static void main(String[] args) {
+        maior();
+    }
+    
+    public static void maior(){
+        Scanner scanner = new Scanner(System.in);
+        
+        int N = 4;
+        int[] vetor = new int[N];
+        int maior = Integer.MIN_VALUE;
+        
+        System.out.println("insira os elementos do vetor: ");
+        for(int i = 0; i < N; i++){
+            vetor[i] = scanner.nextInt();
+            if(vetor[i] > maior){
+                maior = vetor[i];
+            }
+        }
+        
+        Arrays.sort(vetor);
+        
+        System.out.println("maior elemento: " + maior);
+    
+    }
+    
+}
+
+3-
+public class Exer_3 {
+
+    public static void main(String[] args) {
+        maior();
+    }
+    
+    public static void maior(){
+        Scanner scanner = new Scanner(System.in);
+        
+        int R = 7;
+        int[] vetor = new int[R];
+        double soma = 0;
+        
+        System.out.println("insira os elementos do vetor: ");
+        for(int i = 0; i < R; i++){
+            vetor[i] = scanner.nextInt();
+            soma += vetor[i];   
+        }
+        
+        System.out.println("média dos elementos: " + soma / R);
+        }
+    
+    }
+    
+4-
+public class Exer_4 {
+
+    public static void main(String[] args) {
+        cópiaVetor();
+    }
+    
+    public static void cópiaVetor(){
+        Scanner scanner = new Scanner(System.in);
+        
+        int V = 5;
+        int[] vetor = new int[V];
+        
+        System.out.println("insira os elementos do vetor: ");
+        for(int i = 0; i < V; i++){
+            vetor[i] = scanner.nextInt();
+            
+        }
+        int[] cópia = vetor.clone();
+        String vetorS = Arrays.toString(cópia);
+        System.out.println("vetor copiado: " + vetorS);
+        }
+    
+    }
+    
+5-
+public class Exer_5 {
+
+    public static void main(String[] args) {
+        igual();
+    }
+    
+    public static void igual(){
+        Scanner scanner = new Scanner(System.in);
+        
+        int b = 5;
+        int[] vetor1 = new int[b];
+        int[] vetor2 = new int[b];
+        
+        
+        System.out.println("insira os elementos do primeiro vetor: ");
+        for(int i = 0; i < b; i++){
+            vetor1[i] = scanner.nextInt();    
+        }
+        
+        System.out.println("insira os elementos do segundo vetor: ");
+        for(int i = 0; i < b; i++){
+            vetor2[i] = scanner.nextInt();
+        }
+        
+        boolean iguais = Arrays.equals(vetor1, vetor2);
+        if (iguais == true){
+        System.out.println("os vetores são iguas");
+        }else{
+            System.out.println("os vetores não são iguais");
+        }
+    }
+}
+
+6-
+public class Exer_6 {
+
+    public static void main(String[] args) {
+        inverterVetor();
+    }
+    public static void inverterVetor(){
+        Scanner scanner = new Scanner(System.in);
+        int s = 6;
+        int[] vetor1 = new int[s];
+        int[] vetor2 = new int[s];
+        int n, N;
+        System.out.println("insira os elementos do vetor: ");
+         for(int i = 0;i < s;i++){
+             vetor1[i] = scanner.nextInt();
+         }
+         for(N = s - 1, n = 0; N >= 0; N--, n++){
+             vetor2[n] = vetor1[N];
+         }
+         String VetorS = Arrays.toString(vetor2);
+         System.out.println("vetor invertido" + VetorS);
+    }
+    
+}
+
+7-
+public class Exer_7 {
+
+    public static void main(String[] args) {
+        paresImpares();
+    }
+    
+    public static void paresImpares (){
+        Scanner scanner = new Scanner(System.in);
+        
+       int n = 5;
+       int [] vetor = new int[n];
+       int pares = 0;
+       int ímpares = 0;
+       
+        System.out.println("insira os elementos do vetor: ");
+        
+       for (int i = 0;i < n;i++){
+           vetor[i] = scanner.nextInt();
+       }
+       
+       for(int i = 0; i < n; i++){
+           if (vetor[i] % 2 == 0){
+               pares++;
+           }else{
+               ímpares++;
+           }
+       }
+        System.out.println("númeres pares é igual: " + pares);
+        System.out.println("números ímpares é igual: " + ímpares);
+    }
+    
+}
+
+8-
+public class Exer_8 {
+
+    public static void main(String[] args) {
+        remoçao();
+    }
+    
+    public static void remoçao(){
+        Scanner scanner = new Scanner(System.in);
+        
+        int v = 6;
+        int[] vetor = new int[v];
+        
+        System.out.println("insira os elementos do vetor: ");
+        for(int i = 0;i < v;i++){
+        vetor[i] = scanner.nextInt();
+    }
+        System.out.println("insira o valor que será removido: ");
+        int valorRemover = scanner.nextInt();
+        
+        ArrayList<Integer> novoVetor = new ArrayList<>();
+        for (int i = 0; i < v; i++){
+        if (vetor[i] != valorRemover){
+            novoVetor.add(vetor[i]);
+            
+        }
+}
+        System.out.println("resultado após a remoção: ");
+        for (int num : novoVetor){
+            System.out.print(num + "");
+        }
+        
+    
+    }
+    
+}
+    
+9-
+public class Exer_9 {
+
+    public static void main(String[] args) {
+        ordemCrescente();
+    }
+    
+    public static void ordemCrescente(){
+        Scanner scanner = new Scanner(System.in);
+        
+        int r = 4;
+        int[] vetor = new int[r];
+        
+        System.out.println("insira os elementos do vetor: ");
+        for(int i = 0;i < r;i++){
+            vetor[i] = scanner.nextInt();
+        }
+        
+        Arrays.sort(vetor);
+        
+        System.out.println("vetor em ordem crescente: " + Arrays.toString(vetor));
+    
+    }
+    
+}
+    
+10-
+ public class Exer_10 {
+
+    public static void main(String[] args) {
+       buscaSequencial();
+    }
+    public static void buscaSequencial(){
+        Scanner scanner = new Scanner(System.in);
+        int M = 5;
+        int[] vetor = new int[M];
+        System.out.println("insira os elementos do vetor: ");
+        for(int i = 0;i < M;i++){
+             vetor[i] = scanner.nextInt();     
+    }
+        System.out.println("insira o elementos a ser buscado: ");
+        int elementoBusca = scanner.nextInt();
+        int i;
+        boolean encontrado = false;
+        for ( i = 0; i < M; i++){
+            if (vetor[i] == elementoBusca) {
+            encontrado = true;
+            break;
+        }
+    }
+        if (encontrado){
+            System.out.println("o elemento " + elementoBusca + " foi encontrado no vetor. Na posição " + i);
+    }else{
+            System.out.println("o elemento " + elementoBusca + " não foi encontrado no vetor. Última posição: " + vetor[vetor.length -1]);
+        }
+}
+    }
